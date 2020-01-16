@@ -1,9 +1,0 @@
-
-public class OddEvenSets {
-
-	public OddEvenSets(String letters) {
-		// TODO Auto-generated constructor stub
-		String[] base = letters.split(" ");
-	}
-
-}
