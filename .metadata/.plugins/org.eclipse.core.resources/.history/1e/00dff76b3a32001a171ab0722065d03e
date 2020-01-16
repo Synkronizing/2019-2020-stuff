@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class MathSet {
+
+	public MathSet(String set1, String set2) {
+		// TODO Auto-generated constructor stub
+		ArrayList<Integer> intList = new ArrayList<>(intoInts(set1));
+		ArrayList<Integer> intList2 = new ArrayList<>(intoInts(set2));
+		Set<Integer> union = new TreeSet<Integer>();
+		union = uCombine(intList,intList2,union);
+		
+		System.out.println("Set One: "+intList);
+		System.out.println("Set Two: "+intList2);
+		System.out.println("\nUnion - "+union);
+	}
+	
+	public ArrayList<Integer> intoInts(String list) {
+		ArrayList<Integer> intList = new ArrayList<>();
+		String[] templist = list.split(" ");
+		for(String pos : templist) {
+			intList.add(Integer.parseInt(pos));
+		}
+		return intList;
+		
+	}
+	public Set<Integer> uCombine(ArrayList<Integer> add1,ArrayList<Integer> add2,Set<Integer> set){
+		for (Integer pos: add1) {
+			set.add(pos);
+		}
+		for(Integer pos: add2) {
+			set.add(pos);
+		}
+		return set;
+	}
+	
+	public Set<Integer> FindDupes(String[] words) {
+		// TODO Auto-generated constructor stub
+		final Set<Integer> setToReturn = new TreeSet<>(); 
+		final Set<Integer> set1 = new HashSet<>();
+		for (Integer yourInt : words)
+		  {
+		   if (!set1.add(yourInt))
+		   {
+		    setToReturn.add(yourInt);
+		   }
+		  }
+		return setToReturn;
+	}
+
+}

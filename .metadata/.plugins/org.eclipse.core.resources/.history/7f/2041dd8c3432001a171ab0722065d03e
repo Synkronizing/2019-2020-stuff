@@ -1,0 +1,9 @@
+
+public class MathSet {
+
+	public MathSet(String set1, String set2) {
+		// TODO Auto-generated constructor stub
+		
+	}
+
+}

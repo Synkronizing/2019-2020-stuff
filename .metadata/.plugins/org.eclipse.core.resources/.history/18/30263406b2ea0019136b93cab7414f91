@@ -1,0 +1,11 @@
+package divisor;
+
+import java.util.Scanner;
+
+public class DivisorsRunner extends Divisors{
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);
+	    String userName;
+	    Divisors
+	}
+}

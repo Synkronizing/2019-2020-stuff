@@ -1,0 +1,21 @@
+package divisor;
+
+import java.util.Scanner;
+
+public class DivisorsRunner extends Divisors{
+
+	public DivisorsRunner(int num_send) {
+		super(num_send);
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);
+	    String number;
+	    
+	    System.out.println("Enter number"); 
+	    number = myObj.nextLine();  
+	    int num_send = Integer.parseInt(number);
+	    Divisors send = new Divisors(num_send);
+	}
+}

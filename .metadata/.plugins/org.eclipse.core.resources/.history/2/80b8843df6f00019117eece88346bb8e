@@ -1,0 +1,10 @@
+
+public class BoxWord {
+
+	public BoxWord(String word) {
+		// TODO Auto-generated constructor stub
+		char[] reverse = word.toCharArray();
+			System.out.print(reverse);
+	}
+
+}

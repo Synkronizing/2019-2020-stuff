@@ -1,0 +1,93 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Communications {
+	public static void main(String[] args) {
+		File file = 
+			      new File("/home/compsci/Documents/space.txt"); 
+		Scanner sc = null;
+		try {
+			sc = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+			  
+		while (sc.hasNextLine()) {
+			String line = sc.nextLine();
+			String error="";
+			if(line.length()>14) {
+				char[] linearry = line.toCharArray();
+			 	String code = line.substring(0,3);
+			 	int ascii= Integer.parseInt(line.substring(4,9));
+			 	int length=Integer.parseInt(line.substring(10,13));
+			 	for(int a=0;a<code.length();a++) {
+			 		if(code.charAt(a)==' ') {
+			 			char[] codeChars = code.toCharArray();
+			 			codeChars[a] = '0';
+			 			code=String.valueOf(codeChars);
+			 		}
+			 	}
+			 	ArrayList<String> response=new ArrayList<String>();
+			 	for(int c=14;c<line.length();c++) {
+			 		response.add(String.valueOf(line.charAt(c)));
+			 	}
+			 	String send = line.substring(14,line.length());
+			 	String over=line.substring(line.length()-5,line.length());
+			 	int total=0;
+			 	for(int d=0;d<send.length()-5;d++) {
+			 		total=total +((int)send.charAt(d));
+			 		
+			 	}
+			 	if(total!=ascii) {
+			 		error=error+"check total error";
+			 	}
+			 	if(length!=send.length()) {
+			 		if(error!="") {
+			 			error=error+",length error";
+			 		}
+			 		else {
+			 			error=error+"length error";
+			 		}
+			 	if(over!="over") {
+			 		if(error!="") {
+			 			error=error+",incomplete transmission";
+			 		}
+			 		else {
+			 			error=error+"length error";
+			 		}
+			 	}
+			 	}
+			 	System.out.println(total);
+			 	
+			 	
+				
+				for (int b=0;b<response.size();b++) {
+					String c = response.get(b);
+					if(c=="f") {
+						response.set(b, "B");
+					}
+					else if(c.equals("F")){
+						response.set(b, "P");
+					}
+					else if(c.equals("e")) {
+						response.set(b, "A");
+					}
+					else if(c.equals(" ")) {
+						response.set(b, "e");
+					}
+					else if(c.equals("t")) {
+						response.set(b, ">?/");
+					}
+					
+				}
+				System.out.println("transmission "+ code); 
+				System.out.println(String.valueOf(response));
+				
+			}
+		}
+	}
+}
+

@@ -1,0 +1,9 @@
+
+public class TriangleFive {
+
+	public TriangleFive(int num_send, String letter) {
+		// TODO Auto-generated constructor stub
+		
+	}
+
+}

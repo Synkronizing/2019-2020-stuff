@@ -1,0 +1,33 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class ArrayFind {
+	public  Integer returnposition() {
+		String food[] = {"Spaghetti","Ham and cheese Sandwich","Orange Chicken","Steak","Lemon Meringue Pie","Chocolate Cake"};
+		boolean numberfind=false;
+		Scanner find= new Scanner(System.in);
+		System.out.println(food[foodnum]);
+		while(numberfind==false) {
+			try {
+				int foodnum=Integer.parseInt(find.nextLine());
+				
+				numberfind=true;
+			}catch(InputMismatchException e) {
+				System.out.println(e);
+				System.out.print("Try Again ");
+				
+			}catch(ArrayIndexOutOfBoundsException e) {
+				System.out.println(e);
+				System.out.print("Try Again ");
+			}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.print("Pick a number between 0-5: ");
+		
+		}
+	}
+
+}

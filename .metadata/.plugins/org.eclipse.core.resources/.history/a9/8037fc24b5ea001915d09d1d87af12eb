@@ -1,0 +1,6 @@
+public class ReverseNumber {
+	public ReverseNumber(int num_send) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

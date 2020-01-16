@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class BPA {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner myObj = new Scanner(System.in);
+		String word;
+		String alpha="abcedefghijklmnopqrstuvwxyz";
+		char[] alphaboi=alpha.toCharArray();
+		System.out.println("How many movies are you rating?");
+		word = myObj.nextLine();
+		boolean t=false;
+		int count=0;
+		while(t==false) {
+			for(int b=0;b<word.length();b++) {
+				for(int c=0;c<alphaboi.length;c++)
+				if(word.charAt(b)==alphaboi[c]) {
+					count++;
+				}
+				if(count==0) {
+					t=true;
+				}
+			}
+			
+		}
+		int amount = Integer.parseInt(word);
+		word = "hello";
+		int[] web = {0};
+		int position1=0;
+		for(int a=1;a<=amount;a++) {
+			
+			while(word!="") {
+				word = myObj.nextLine();
+				int temp=Integer.parseInt(word);
+				web[position1]=temp;
+			}
+			System.out.println(web);
+		}
+	}
+
+}

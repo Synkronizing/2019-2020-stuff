@@ -1,0 +1,19 @@
+
+public class Dog {
+
+	public Dog(String dog) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public char[] getPeopleAge(int age) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void increaseAgeByOne() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

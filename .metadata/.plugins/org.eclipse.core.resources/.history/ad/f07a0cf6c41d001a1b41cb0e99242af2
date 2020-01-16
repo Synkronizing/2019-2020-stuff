@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Bubble {
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);
+		ArrayList<ArrayList<String>> big_list=new ArrayList<ArrayList<String>>();
+		ArrayList<String>  list = new ArrayList<String>();
+		String year;
+		String name;
+		    
+		System.out.println("Enter a year between 1880-2018"); 
+		year = myObj.nextLine();
+	}
+}

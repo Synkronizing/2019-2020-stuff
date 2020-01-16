@@ -1,0 +1,60 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Quick {
+	public static void main(String[] args) throws IOException {
+		Scanner myObj = new Scanner(System.in);
+		ArrayList<String>  list = new ArrayList<String>();
+		String year;
+		    
+		System.out.println("Enter a year between 1880-2018"); 
+		year = myObj.nextLine();
+		
+		File file = 
+			      new File("/home/compsci/Documents/names/yob"+year+".txt"); 
+		Scanner sc = null;
+		try {
+			sc = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		while(sc.hasNextLine()) {
+			String line = sc.nextLine();
+			String[] words = line.split(",");
+			String given = words[0];	
+			list.add(given);
+		}
+		Quick ob = new Quick(); 
+		int n = list.size();
+        ob.sort(list, 0, n-1); 
+		
+		FileWriter writer = new FileWriter("bubblesorted.txt"); 
+		for(String str: list) {
+		  writer.write(str + System.lineSeparator());
+		}
+		
+	
+	}
+	private void sort(ArrayList<String> list, int low, int high) {
+		if (low < high) 
+        { 
+            /* pi is partitioning index, arr[pi] is  
+              now at right place */
+            int pi = partition(arr, low, high); 
+  
+            // Recursively sort elements before 
+            // partition and after partition 
+            sort(arr, low, pi-1); 
+            sort(arr, pi+1, high); 
+        } 
+		
+		
+	}
+		
+}

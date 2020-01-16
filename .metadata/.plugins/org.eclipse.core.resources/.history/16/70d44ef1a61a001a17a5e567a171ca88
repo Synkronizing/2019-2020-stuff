@@ -1,0 +1,30 @@
+package search;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Linear {
+
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);
+		String year;
+		    
+		System.out.println("Enter a year between 1880-2018"); 
+		year = myObj.nextLine(); 
+		
+		File file = 
+			      new File("/home/compsci/Documents/names/yob"+year+".txt"); 
+		Scanner sc = null;
+		try {
+			sc = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		sc.nextLine()
+
+	}
+
+}

@@ -1,0 +1,59 @@
+package search;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Selection {
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);
+		ArrayList<String>  list = new ArrayList<String>();
+		ArrayList<ArrayList<String>> big_list=new ArrayList<ArrayList<String>>();
+		String year;
+		    
+		System.out.println("Enter a year between 1880-2018"); 
+		year = myObj.nextLine();
+		
+		File file = 
+			      new File("/home/compsci/Documents/names/yob"+year+".txt"); 
+		Scanner sc = null;
+		try {
+			sc = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		while(sc.hasNextLine()) {
+			String line=sc.nextLine();
+			String[] words = line.split(",");
+			list = new ArrayList<String>(Arrays.asList(words));
+			big_list.add(list);
+		}
+		big_list = selectionSort(big_list);
+		System.out.println(big_list);
+		
+	
+	}
+	public static ArrayList<ArrayList<String>> selectionSort(ArrayList<ArrayList<String>> list){
+		int i,j, minValue, minIndex, temp=0;
+		for(i =0;i<list.size();i++) {
+			minValue = Integer.parseInt(list.get(i).get(2));
+			minIndex =i;
+			for(j=i;j<list.size();j++) {
+				if(Integer.parseInt(list.get(j).get(i))<minValue) {
+					minValue = list[j];
+					minIndex = j;
+				}
+			}
+			if(minValue<list[i]) {
+				temp=list[i];
+				list[i]=list[minIndex];
+				list[minIndex]= temp;
+			}
+		}
+		return(list);
+	}
+}

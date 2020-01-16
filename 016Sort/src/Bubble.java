@@ -1,0 +1,59 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Bubble {
+	public static void main(String[] args) throws IOException {
+		Scanner myObj = new Scanner(System.in);
+		ArrayList<String>  list = new ArrayList<String>();
+		String year;
+		    
+		System.out.println("Enter a year between 1880-2018"); 
+		year = myObj.nextLine();
+		
+		File file = 
+			      new File("/home/compsci/Documents/names/yob"+year+".txt"); 
+		Scanner sc = null;
+		try {
+			sc = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		while(sc.hasNextLine()) {
+			String line = sc.nextLine();
+			String[] words = line.split(",");
+			String given = words[0];	
+			list.add(given);
+		}
+		list = bubbleSort(list);
+		System.out.println(list);
+		
+		FileWriter writer = new FileWriter("bubblesorted.txt"); 
+		for(String str: list) {
+		  writer.write(str + System.lineSeparator());
+		}
+		
+	
+	}
+	public static ArrayList<String> bubbleSort(ArrayList<String> list){
+		int i,j;
+		String temp;
+		for(i=0;i<list.size() -1;i++) {
+			for(j=0;j<list.size()-i-1;j++) {
+				if(list.get(j).compareTo(list.get(j+1))>0) {
+					temp = list.get(j);
+					list.set(j, list.get(j+1));
+					list.set(j+1, temp);
+				}
+			}
+		
+	}
+		return list;
+	}
+	
+}

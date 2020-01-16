@@ -1,0 +1,40 @@
+//(c) A+ Computer Science
+//www.apluscompsci.com
+//Name -
+//Date -
+
+public class Dealer extends Player
+{
+	//define a deck of cards
+	private Deck deckofCards
+	public Dealer() {
+		super();
+	}
+
+	public void  shuffle()
+	{
+	   //shuffle the deck
+	}
+
+	public Card  deal(){
+	   return null;
+	}
+	
+	public int numCardsLeftInDeck()
+	{
+		return 0;
+	}
+
+	public boolean hit()
+	{
+	   return false;
+    }
+}
+
+
+
+
+
+
+
+

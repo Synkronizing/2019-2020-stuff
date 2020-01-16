@@ -1,0 +1,9 @@
+
+public class Factorial {
+
+	public Factorial(int num_send) {
+		// TODO Auto-generated constructor stub
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+public class ReverseNumber {
+	public ReverseNumber(int num_send) {
+		int rev=0;
+		int a=Integer.toString(num_send).length();
+		int b=Integer.toString(num_send).length();
+		while(b>0) {
+			int send = num_send % 10;
+			num_send= num_send / 10;
+			rev = (rev*10)+send;
+			b--;
+		}
+		while(a>0)
+		System.out.print(rev);
+		
+	}
+
+}

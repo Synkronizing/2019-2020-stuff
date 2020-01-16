@@ -1,0 +1,29 @@
+//(c) A+ Computer Science
+//www.apluscompsci.com
+
+//Name -
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.ListIterator;
+import static java.lang.System.*;
+
+public class IteratorReplacerRunner
+{
+	public static void main ( String[] args )
+	{
+		String words = "a b c c d e f g h i j k    c    x";
+		char[] alpha="abcdefghijklmnopqrstuv".toCharArray();
+		char temp=words.charAt(words.length()-1);
+		char[] temp2=words.substring(temp-5,temp).toCharArray();
+		for(int a=temp2.length-1;a>0;a--) {
+			for(char let:alpha) {
+				if(temp2[a]==let) {
+					String rem=String.valueOf(temp);
+				}
+			}
+		}
+		String replace = String.valueOf(temp);
+		IteratorReplacer line= new IteratorReplacer(words,rem,replace);	
+	}
+}

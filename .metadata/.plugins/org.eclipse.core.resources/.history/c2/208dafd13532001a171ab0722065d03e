@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+
+public class MathSet {
+
+	public MathSet(String set1, String set2) {
+		// TODO Auto-generated constructor stub
+		ArrayList<Integer> intList = new ArrayList<>(intoInt(set1));
+		ArrayList<Integer> intList2 = new ArrayList<>(intoInt(set2));
+		
+		System.out.println("Set One: "+intList);
+		System.out.println("Set Two: "+intList2);
+	}
+	
+	public ArrayList<Integer> intoInt(String list) {
+		ArrayList<Integer> intList = new ArrayList<>();
+		String[] templist = list.split(" ");
+		for(String pos : templist) {
+			intList.add(Integer.parseInt(pos));
+		}
+		return intList;
+		
+	}
+
+}

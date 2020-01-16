@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class ArrayFind {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String food[] = {"Spaghetti","Ham and cheese Sandwich","Orange Chicken","Steak","Lemon Meringue Pie",""};
+		Scanner find= new Scanner(System.in);
+		
+	}
+
+}

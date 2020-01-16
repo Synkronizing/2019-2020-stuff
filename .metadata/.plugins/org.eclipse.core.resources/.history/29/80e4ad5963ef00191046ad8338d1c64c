@@ -1,0 +1,13 @@
+
+public class Factorial {
+
+	public Factorial(int num_send) {
+		// TODO Auto-generated constructor stub
+		int fact=1;
+		for(int a=num_send;a>0;a--) {
+			fact=fact*a;
+		}
+		System.out.print(fact);
+	}
+
+}

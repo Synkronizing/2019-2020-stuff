@@ -1,0 +1,9 @@
+package divisor;
+
+public class Divisors {
+	public void divider(int number) {
+		int division_max = number -1;
+		int divisor=0;
+		while(divisor<division_max;divisor++)
+	}
+}

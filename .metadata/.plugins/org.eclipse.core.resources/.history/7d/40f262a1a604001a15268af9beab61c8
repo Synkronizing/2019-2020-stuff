@@ -1,0 +1,120 @@
+//(c) A+ Computer Science
+//www.apluscompsci.com
+//Name -
+//Date -
+
+import static java.lang.System.*;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class BlackJack
+{
+	//add in Player instance variable
+	//add in Dealer instance variable
+	Dealer dealer = new Dealer();
+	private ArrayList<Player> players;
+	public BlackJack()
+	{
+		
+	}
+
+	public void playGame()
+	{	
+		players = new ArrayList<>();
+		System.out.print("How many players");
+		Scanner keys = new Scanner(System.in);
+		int amount = Integer.parseInt(keys.nextLine());
+		for(int i=0;i< amount;i++) {
+			Player p = new Player();
+			players.add(p);
+		}
+		char contin ='y';
+		int dealerTotal = dealer.getHandValue();
+		for(Player player:players) {
+				
+			dealer.shuffle();
+				
+			player.addCardToHand(dealer.deal());
+			player.addCardToHand(dealer.deal());
+			int playerTotal = player.getHandValue();
+				
+			char choice ='y';
+			while(choice!='n'&&playerTotal<22) {
+				if(choice!='n'&&playerTotal<22) {
+						
+					out.println("\nPLAYER "+ players.indexOf(player));
+					out.println("Hand Value :: " + playerTotal );
+					out.println("Cards in Hand :: " + player.toString() );
+					
+										System.out.print("Do you want to hit? y/n");
+					Scanner keyboard = new Scanner(System.in);
+					choice = keyboard.nextLine().toLowerCase().charAt(0);
+					if(choice=='y') {
+						player.addCardToHand(dealer.deal());						
+						}
+				}
+				playerTotal = player.getHandValue();
+				if(playerTotal>21) {
+					System.out.println("bust");
+				}
+						
+				
+				playerTotal = player.getHandValue();
+			}
+			}
+			dealer.addCardToHand(dealer.deal());
+			dealer.addCardToHand(dealer.deal());
+			dealerTotal = dealer.getHandValue();
+			while(dealerTotal<17) {
+			dealer.addCardToHand(dealer.deal());
+			dealerTotal = dealer.getHandValue();
+			}
+			dealerTotal = dealer.getHandValue();
+			
+			for(Player player:players) {
+				int playerTotal = player.getHandValue();
+				out.println("\nPLAYER " + players.indexOf(player));
+				out.println("Hand Value :: " + playerTotal );
+				out.println("Hand Size :: " + player.getHandSize() );
+				out.println("Cards in Hand :: " + player.toString() );
+			}
+			out.println("\nDEALER ");
+			out.println("Hand Value :: " + dealerTotal );
+			out.println("Hand Size :: " + dealer.getHandSize() );
+			out.println("Cards in Hand :: " + dealer.toString() );
+			for(Player player:players) {
+				int playerTotal = player.getHandValue();
+				int pPosition= players.indexOf(player)+1;
+				if(dealerTotal >= playerTotal && dealerTotal<22||playerTotal>21) {
+					out.println("\nPlayer "+pPosition+" You Lose");
+					int dealwin = dealer.getWinCount();
+					dealer.setWinCount(dealwin+1);
+					out.println("Player"+pPosition+" Wins:"+ player.getWinCount());
+					out.println("Dealer Wins:"+ dealer.getWinCount());
+					
+				}
+				else if (playerTotal<22&playerTotal>dealerTotal||playerTotal<22&&dealerTotal>21){
+					out.println("\nPlayer "+pPosition+" You Win");
+					int playwin = player.getWinCount();
+					player.setWinCount(playwin+1);
+					out.println("Player"+ pPosition+ "Wins:"+ player.getWinCount());
+					out.println("Dealer Wins:"+ dealer.getWinCount());
+				}
+			}
+			
+			dealer.resetHand();
+			for(Player player:players) {
+				player.resetHand();
+			}
+			out.println("\nPlay Again? y/n");
+			Scanner keyboard = new Scanner(System.in);
+			contin = keyboard.nextLine().toLowerCase().charAt(0);
+		}
+	
+	public static void main(String[] args)
+	{
+		BlackJack game = new BlackJack();
+		game.playGame();
+	}
+}

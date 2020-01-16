@@ -1,0 +1,8 @@
+
+public class TwotoTen {
+
+	public TwotoTen(int num_send) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

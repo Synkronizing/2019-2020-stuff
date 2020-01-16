@@ -1,0 +1,61 @@
+//(c) A+ Computer Science
+//www.apluscompsci.com
+//Name -
+//Date -
+
+import java.util.*;
+
+public class Player
+{
+   private ArrayList<Card> hand;
+   private int winCount;
+
+   public Player ()
+   {
+	   hand = new ArrayList<>();
+	   this.winCount=0;
+   }
+
+   public Player (int score)
+   {
+	   this.winCount=score;
+   }
+
+   public void addCardToHand( Card temp )
+   {
+	   hand.add(temp);
+   }
+
+   public void resetHand( )
+   {
+	   hand.clear();
+   }
+
+   public  void setWinCount( int numwins )
+   {
+	   this.winCount = numwins;
+   }
+
+   public int getWinCount() { return this.winCount; }
+
+   public int getHandSize() { return hand.size(); }
+
+   public int getHandValue()
+   {
+	   int value=0;
+	   for (Card c: hand){
+		   value= value + c.getValue();
+	   }
+	   return value;
+   }
+
+   public  boolean  hit( )
+   {
+      return false;
+   }
+
+   public String toString()
+   {
+      return "Hand =" + hand+ " - " + getHandValue() ;
+   }
+}

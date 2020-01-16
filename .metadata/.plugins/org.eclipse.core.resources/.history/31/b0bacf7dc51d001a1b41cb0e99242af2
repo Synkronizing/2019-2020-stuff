@@ -1,0 +1,40 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Bubble {
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);
+		ArrayList<ArrayList<String>> big_list=new ArrayList<ArrayList<String>>();
+		ArrayList<String>  list = new ArrayList<String>();
+		String year;
+		    
+		System.out.println("Enter a year between 1880-2018"); 
+		year = myObj.nextLine();
+		
+		File file = 
+			      new File("/home/compsci/Documents/names/yob"+year+"sorted.txt"); 
+		Scanner sc = null;
+		try {
+			sc = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public static int[] bubbleSort(int[] list){
+		int i,j,temp=0;
+		for(i=0;i<list.length -1;i++) {
+			for(j=0;j<list.length-i-1;j++) {
+				if(list[j]>list[j+1]) {
+					temp = list[j];
+					list[j]=list[j+1];
+					list[j+1]=temp;
+				}
+			}
+		
+	}
+		return list;
+	}
+}

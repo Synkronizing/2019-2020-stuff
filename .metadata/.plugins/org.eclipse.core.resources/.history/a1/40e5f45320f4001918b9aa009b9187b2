@@ -1,0 +1,36 @@
+
+public class Dog {
+	private String dog_name;
+	private Integer dog_age;
+	private Integer counter;
+
+	public Dog(String dog) {
+		// TODO Auto-generated constructor stub
+		dog_name=dog;
+	}
+
+	public Dog(String dog, int age) {
+		// TODO Auto-generated constructor stub
+		dog_name=dog;
+		dog_age=age;
+	}
+
+	public Integer getPeopleAge(int age) {
+		// TODO Auto-generated method stub
+		age=age*7;
+		return age;
+	}
+
+	public void increaseAgeByOne() {
+		// TODO Auto-generated method stub
+		dog_age++;
+		
+	}
+
+	public String getName() {
+		// TODO Auto-generated method stub
+		return dog_name;
+	}
+	
+
+}

@@ -1,0 +1,8 @@
+public class ReverseNumber {
+	public ReverseNumber(int num_send) {
+		int rev=0;
+		int b=Integer.toString(num_send).length();
+		
+	}
+
+}

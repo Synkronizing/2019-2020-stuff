@@ -1,0 +1,40 @@
+//(c) A+ Computer Science
+//www.apluscompsci.com
+
+//Name -
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.ListIterator;
+import static java.lang.System.*;
+
+public class IteratorReplacer
+{
+	private ArrayList<String> list;
+	private String toRemove, replaceWith;
+
+	public IteratorReplacer(String line, String rem, String rep)
+	{
+		String[] words = line.split(" ");
+		list = new ArrayList<String>(Arrays.asList(words));
+		toRemove=rem;
+		replaceWith=rep;
+		Iterator<String> itera= list.iterator();
+		Collection<String> collection = new ArrayList<String>();
+		while(itera.hasNext()) {
+			
+			if(itera.next().equals(toRemove)) {
+				collection.add(rep)
+			}
+			else {
+				collection.add(itera.next())
+			}
+		}
+		System.out.println(list.toString());
+	}
+
+
+	
+}

@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class DogRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner myObj = new Scanner(System.in);
+		String number;
+		String dog_name;
+		System.out.println("Enter dog name");   
+		= = myObj.nextLine();
+		System.out.println("Enter number"); 
+		number = myObj.nextLine();  
+		
+		Dog d = new Dog( dog_name);
+	}
+
+}

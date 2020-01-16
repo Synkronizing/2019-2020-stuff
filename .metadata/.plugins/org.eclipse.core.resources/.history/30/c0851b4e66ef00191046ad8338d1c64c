@@ -1,0 +1,14 @@
+
+public class TwotoTen {
+
+	public TwotoTen(int num_send) {
+		// TODO Auto-generated constructor stub
+		int remainder;
+		int basetwo;
+		while(num_send!=0) {
+			remainder= num_send % 10;
+			basetwo = basetwo+ remainder
+		}
+	}
+
+}

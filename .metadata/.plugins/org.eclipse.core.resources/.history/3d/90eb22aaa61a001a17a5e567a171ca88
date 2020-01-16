@@ -1,0 +1,16 @@
+package search;
+
+import java.util.Scanner;
+
+public class Linear {
+
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);
+		String word;
+		    
+		System.out.println("Enter a year between 1880-2018"); 
+		word = myObj.nextLine(); 
+
+	}
+
+}

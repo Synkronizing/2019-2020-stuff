@@ -1,0 +1,17 @@
+
+public class TriangleFive {
+
+	public TriangleFive(int num_send, String letter) {
+		// TODO Auto-generated constructor stub
+		char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+		
+		for(int a=num_send;a!=0:a--) {
+			for(int b=num_send;b!=0;b--) {
+				for(int c=num_send;c!=0;c--) {
+					
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,16 @@
+package monsters;
+
+public class GoodWitch extends Witch
+{
+   //what do we need here??
+   
+   
+   public GoodWitch( String name )
+   {
+ 	  super(name);
+   }
+
+   public GoodWitch() {
+	   super();
+   }
+}

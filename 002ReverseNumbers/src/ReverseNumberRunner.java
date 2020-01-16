@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+
+public class ReverseNumberRunner extends ReverseNumber{
+
+	public ReverseNumberRunner(int num_send) {
+		super(num_send);
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);
+		String number;
+		    
+		System.out.println("Enter number"); 
+		number = myObj.nextLine();  
+		int num_send = Integer.parseInt(number);
+		ReverseNumber send = new ReverseNumber(num_send);
+	}
+
+}
+

@@ -1,0 +1,24 @@
+import java.util.Arrays;
+
+public class BoxWord {
+
+	public BoxWord(String word) {
+		// TODO Auto-generated constructor stub
+		char[] vertical = word.toCharArray();
+		System.out.println(word);
+		
+		
+		int word_length = word.length();
+		vertical = Arrays.copyOfRange(vertical, 1, word_length-1);
+		for(int a=word.length()-3;a>0;a--) {
+			System.out.println(a);
+		}
+		
+		System.out.println(vertical);
+		char[] reverse = word.toCharArray();
+		for(int i=word.length()-1;i>=0;i--) {
+			System.out.print(reverse[i]);
+		}
+	}
+
+}

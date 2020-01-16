@@ -1,0 +1,9 @@
+
+public class BoxWord {
+
+	public BoxWord(String word) {
+		// TODO Auto-generated constructor stub
+		word=word.reverse();
+	}
+
+}

@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class ArrayFind {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String food[] = {"Spaghetti","Ham and cheese Sandwich","Orange Chicken","Steak","Lemon Meringue Pie",""};
+		boolean numberfind=false;
+		Scanner find= new Scanner(System.in);
+		
+		while(numberfind==false) {
+			try {
+				int foodnum=Integer.parseInt(find.nextLine());
+			}catch(Exception e) {
+				
+			}
+		}
+	}
+
+}

@@ -1,0 +1,12 @@
+
+public class BoxWord {
+
+	public BoxWord(String word) {
+		// TODO Auto-generated constructor stub
+		char[] reverse = word.toCharArray();
+		for(int i=word.length();i>0;i++) {
+			System.out.print(reverse[i]);
+		}
+	}
+
+}

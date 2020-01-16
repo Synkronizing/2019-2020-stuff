@@ -1,0 +1,23 @@
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class UniqueDupes {
+
+
+	public Set<String> UniqueDupes(String[] words) {
+		// TODO Auto-generated constructor stub
+		final Set<String> setToReturn = new HashSet<>(); 
+		final Set<String> set1 = new HashSet<>();
+		for (String yourInt : words)
+		  {
+		   if (!set1.add(yourInt))
+		   {
+		    setToReturn.add(yourInt);
+		   }
+		  }
+		return setToReturn;
+	}
+	
+
+}

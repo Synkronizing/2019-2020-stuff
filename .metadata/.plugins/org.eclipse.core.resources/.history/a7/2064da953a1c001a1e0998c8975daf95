@@ -1,0 +1,98 @@
+package search;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Linear {
+
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);
+		ArrayList<ArrayList<String>> big_list=new ArrayList<ArrayList<String>>();
+		ArrayList<String>  list = new ArrayList<String>();
+		String year;
+		String name;
+		    
+		System.out.println("Enter a year between 1880-2018"); 
+		year = myObj.nextLine(); 
+		System.out.println("Enter a name to find"); 
+		name = myObj.nextLine();
+		
+		name= name.substring(0,1).toUpperCase()+name.substring(1).toLowerCase();
+		File file = 
+			      new File("/home/compsci/Documents/names/yob"+year+"sorted.txt"); 
+		Scanner sc = null;
+		try {
+			sc = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String given=" ";
+		String gender= "";
+		int amount=0;
+		int done = 0;
+		int read=0;
+		while(sc.hasNextLine()&&done<2) {
+			read++;
+			String line = sc.nextLine();
+			String[] words = line.split(",");
+			given = words[0];
+			gender = words[1];
+			if(given.equals(name)) {
+				int temp_amt=Integer.parseInt(words[2]);
+				amount=amount+temp_amt;
+				done++;
+			}
+			
+			
+		}
+		System.out.println("There was "+amount+" babies that were named "+ name+" in the year "+ year);
+		System.out.println("This took "+read +" comparisons");
+		try {
+			sc = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		while(sc.hasNextLine()) {
+			String line=sc.nextLine();
+			String[] words = line.split(" ");
+			list = new ArrayList<String>(Arrays.asList(words));
+			big_list.add(list);
+		}
+		int big_total=0;
+		int low = 0;
+        int high = big_list.size() - 1;
+        int mid = (low + high) / 2;
+		while (low <= high ) {
+			if(big_list.get(mid).get(0).equals(name)) {
+				int amount2 = Integer.parseInt(big_list.get(mid).get(2));
+				String gender2 = big_list.get(mid).get(1);
+				big_total=big_total+amount2;
+				if(gender2.equals("F")) {
+					String temp_name = big_list.get(mid+1).get(0);
+					if(temp_name.equals(name)) {
+						amount2 = Integer.parseInt(big_list.get(mid+1).get(2));
+						big_total=big_total+amount2;
+					}
+				}
+				big_total=big_total+amount2;
+			}
+			else if (big_list.get(mid).get(0).compareTo(name) < 0) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+
+            mid = (low + high) / 2;
+
+        }
+		System.out.println("There was "+big_total+" babies that were named "+ name+" in the year "+ year);
+		System.out.println("This took "+read +" comparisons");
+		
+	}
+
+}

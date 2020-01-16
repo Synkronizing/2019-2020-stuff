@@ -1,0 +1,12 @@
+
+public class CountPairs {
+	public CountPairs(String word) {
+		int count=0;
+		for(int a=0; a< word.length(); a++) {
+			if(word.charAt(a)==word.charAt(a+1)) {
+				count++;
+			}
+		}
+	}
+
+}

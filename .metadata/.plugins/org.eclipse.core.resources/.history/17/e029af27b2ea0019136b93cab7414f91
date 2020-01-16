@@ -1,0 +1,18 @@
+package divisor;
+
+public class Divisors {
+	public void divider(int number) {
+		int division_max = number -1;
+		int division = 1;
+		int divisible =0;
+		String possible=number + " has divisors";
+		while(division < division_max) {
+			divisible= number%division;
+			if(divisible==0) {
+				possible = possible.concat(" " + divisible);
+			}
+			division++;
+		}
+		System.out.println(possible);
+	}
+}

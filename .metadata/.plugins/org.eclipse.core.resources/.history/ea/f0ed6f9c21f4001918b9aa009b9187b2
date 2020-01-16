@@ -1,0 +1,11 @@
+
+public class Triangle {
+
+	public Triangle(int numA, int numB, int numC) {
+		// TODO Auto-generated constructor stub
+		int perim = numA+numB+numC;
+		int s = perim/2;
+		int area = Math.sqrt(s((s-numA)(s-numB)(s-numC)));
+	}
+
+}

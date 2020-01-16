@@ -1,0 +1,39 @@
+package search;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Binary {
+
+	public static void main(String[] args) {
+		Scanner myObj = new Scanner(System.in);
+		ArrayList<String> big_list=new ArrayList<String>();
+		String year;
+		String name;
+		    
+		System.out.println("Enter a year between 1880-2018"); 
+		year = myObj.nextLine(); 
+		System.out.println("Enter a name to find"); 
+		name = myObj.nextLine();
+		
+		name= name.substring(0,1).toUpperCase()+name.substring(1).toLowerCase();
+		File file = 
+			      new File("/home/compsci/Documents/names/yob"+year+"sorted.txt"); 
+		Scanner sc = null;
+		try {
+			sc = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		while(sc.hasNextLine()) {
+			String line=sc.nextLine();
+			big_list.add(line);
+		}
+		int bot=0;
+		int top=big_list.length;
+	}
+
+}

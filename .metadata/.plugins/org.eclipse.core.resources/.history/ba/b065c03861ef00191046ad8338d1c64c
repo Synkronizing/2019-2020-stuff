@@ -1,0 +1,9 @@
+
+public class CountPairs {
+	public CountPairs(String word) {
+		for(int a=0; a< word.length(); a++) {
+			
+		}
+	}
+
+}
